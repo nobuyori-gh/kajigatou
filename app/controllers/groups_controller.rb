@@ -8,7 +8,12 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-    @group.save
+    @user = current_user
+    if @group.save
+      redirect_to group_path(@group), notice: "保存できました"
+    else
+      redirect_to user_path(@user)
+    end
   end
 
   def edit
