@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def show
+    @group =Group.new
   end
 
   def edit

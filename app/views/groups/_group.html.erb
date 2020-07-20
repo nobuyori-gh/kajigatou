@@ -1,0 +1,14 @@
+<%= form_with model: group, url: url,local: :true do |f| %>
+
+<%= f.label :グループ名 %>
+<%= f.text_field :name, class: "col-xs-12" %>
+
+<%= f.label :説明文 %>
+<%= f.text_area :body, class: "col-xs-12" %>
+
+<%= f.label :グループ画像 %>
+<%= f.attachment_field :image %>
+
+<%= f.submit submit, class: "btn btn-primary" %>
+
+<% end %>
