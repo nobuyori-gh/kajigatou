@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-10">
+      <%= render '/layouts/errors', obj: @group %>
+      <h2>マイページ</h2>
+      <div class="col-xs-5">
+        <h3>グループ一覧</h3>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>アイコン</th>
+              <th>グループ名</th>
+              <th>説明文</th>
+              <th>入会リクエスト</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @groups.each do |group| %>
+            <tr>
+              <td><%= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "no-image-mini.jpg") %></td>
+              <td><%= group.name %></td>
+              <td><%= group.description %></td>
+              <td><%= link_to 'リクエスト', class: 'btn btn-success' %></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <% if @user == current_user %>
+        <%= link_to '',edit_user_path(@user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_#{@user.id}" %>
+        <% end %>
+      </div>
+
+      <div class="col-xs-2"></div>
+
+      <div class="col-xs-5">
+        <h3>グループを作る</h3>
+        <%= render '/groups/group', group: @group, url: groups_path, submit: '作成する' %>
+      </div>
+    </div>
+    <div class="col-xs-1"></div>
+  </div>
+</div>

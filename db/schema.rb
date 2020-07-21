@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_07_18_143110) do
   create_table "groups", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
-    t.integer "image_id"
+    t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_groups_on_name", unique: true
