@@ -21,8 +21,18 @@ class UsersController < ApplicationController
     end
   end
 
-private
-def user_params
-  params.require(:user). permit(:name,:introduction,:email,:image_id)
-end
+  def delete_confimation
+    user = User.find(params[:id])
+  end
+
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
+    redirect_to root_path
+  end
+
+  private
+  def user_params
+    params.require(:user). permit(:name,:introduction,:email,:image_id)
+  end
 end

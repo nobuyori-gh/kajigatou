@@ -29,9 +29,12 @@
        </div>
        <%= f.submit "更新する", class: "btn btn-primary" %>
        <% end %>
-     </div>
-     <div class="col-xs-3"></div>
-   </div>
-   <div class="col-xs-1"></div>
- </div>
+       <div class="delete">
+        <%= link_to  "退会する", user_deletion_path(@user), class: "btn btn-danger pull-right" %>
+      </div>
+    </div>
+    <div class="col-xs-3"></div>
+  </div>
+  <div class="col-xs-1"></div>
+</div>
 </div>
