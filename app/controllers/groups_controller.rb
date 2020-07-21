@@ -1,9 +1,12 @@
 class GroupsController < ApplicationController
 
   def index
+    @group = Group.new
+    @groups = Group.all
   end
 
   def show
+    @group = Group.find(params[:id])
   end
 
   def create
