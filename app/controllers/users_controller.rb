@@ -2,7 +2,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @group =Group.new
+    @group = Group.new
+    @group.users << current_user
+    # @mygroup = User.groups
   end
 
   def edit

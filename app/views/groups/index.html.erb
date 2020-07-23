@@ -21,7 +21,13 @@
               <td><%= attachment_image_tag(group, :image, :fill, 50, 50, fallback: "no-image-mini.jpg") %></td>
               <td><%= group.name %></td>
               <td><%= group.description %></td>
-              <td><%= link_to 'リクエスト', class: 'btn btn-success' %></td>
+              <td>
+                <% if current_user.already_requested?(group) %>
+                <%= link_to 'リクエスト取消', group_request_path(group_id:group.id), method: :delete %>
+                <% else %>
+                <%= link_to 'リクエスト送信', group_requests_path(group_id:group.id), method: :post %>
+                <% end %>
+              </td>
             </tr>
             <% end %>
           </tbody>
