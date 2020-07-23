@@ -10,7 +10,7 @@
           <%= link_to '',edit_group_path(@group), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_group_#{@group.id}" %>
         </div>
         <div class="row">
-          <%= link_to 'メンバー＆入会リクエスト一覧', class: "btn btn-primary　col-xs-12" %>
+          <%= link_to 'グループメンバー', group_member_path(@group), class: "btn btn-primary　col-xs-12" %>
         </div>
       </div>
 

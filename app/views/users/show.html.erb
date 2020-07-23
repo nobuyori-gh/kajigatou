@@ -36,7 +36,8 @@
         <div class="row">
           <h3>マイグループ</h3>
           <% @mygroup.each do |mygroup| %>
-          <%= link_to mygroup.name, group_parh(mygroup) %>
+          <%= link_to mygroup.name, group_path(mygroup.id) %>
+          <%= link_to 'グループを抜ける', group_user_deletion_path(@user), class: "btn btn-danger pull-right" %>
           <% end %>
         </div>
       </div>

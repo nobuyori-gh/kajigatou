@@ -1,10 +1,12 @@
 class GroupRequestsController < ApplicationController
 
   def index
+    @group = Group.find(params[:id])
+
     # グループメンバー一覧
-    @group_users = Group.users.all
+    @group_users = @group.users.all
     # リクエスト一覧
-    @requests = group.group_requests.all
+    @requests = @group.group_requests.all
   end
 
   # リクエスト送信アクション

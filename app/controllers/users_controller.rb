@@ -2,9 +2,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @mygroup = @user.groups.all
     @group = Group.new
-    @group.users << current_user
-    # @mygroup = User.groups
   end
 
   def edit
@@ -24,7 +23,7 @@ class UsersController < ApplicationController
   end
 
   def delete_confimation
-    user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def destroy
