@@ -1,5 +1,10 @@
 class GroupUsersController < ApplicationController
 
+  # グループ脱退確認画面表示
+  def delete_confimation
+    @group_user = GroupUser.find(params[:id])
+  end
+
   # グループ脱退
   def destroy
     group_user = GroupUser.find(params[:id])
@@ -7,8 +12,4 @@ class GroupUsersController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  # グループ脱退確認
-  def delete_confimation
-    @group = Group.find(params[:id])
-  end
 end

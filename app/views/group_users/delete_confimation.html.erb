@@ -1,14 +1,9 @@
-<div class="container">
-    <div class="row">
-        <div class="col-xs-4"></div>
-        <div class="col-xs-5">
-            <h3>本当に抜けますか？</h3>
-            <p>グループを抜けると、<br>
-                タスクの閲覧・通知ができなくなります。<br>
-            グループを抜ける場合は、「抜ける」をクリックしてください。</p>
-
-            <%= link_to  "抜けない", user_path(current_user), class: 'btn btn-primary'  %>
-            <%= link_to "抜ける", group_user_path, method: :delete, class: "btn btn-danger" %>
-        </div>
-    </div>
+<h3 class="text-center">本当に抜けますか？</h3>
+<p class="text-center">グループを抜けると、<br>
+    タスクの閲覧・通知ができなくなります。<br>
+    グループを抜ける場合は、「抜ける」をクリックしてください。
+</p>
+<div class="pull-right">
+    <%= link_to  "抜けない", user_path(current_user), class: 'btn btn-primary'  %>
+    <%= link_to "抜ける", group_user_path(@group_user), method: :delete, class: "btn btn-danger" %>
 </div>
