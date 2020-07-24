@@ -1,14 +1,5 @@
 class GroupRequestsController < ApplicationController
 
-  # リクエスト一覧
-  def index
-    # group = GroupUser.where(user_id:current_user.id)
-
-    Group.users
-
-    @requests = group.group_requests.all
-  end
-
   # リクエスト送信アクション
   def create
     group = Group.find(params[:group_id])

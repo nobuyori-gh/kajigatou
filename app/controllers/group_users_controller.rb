@@ -1,11 +1,5 @@
 class GroupUsersController < ApplicationController
 
-  def index
-  end
-
-  def show
-  end
-
   # グループ脱退
   def destroy
     group_user = GroupUser.find(params[:id])
@@ -15,6 +9,6 @@ class GroupUsersController < ApplicationController
 
   # グループ脱退確認
   def delete_confimation
-    @user = User.find(params[:id])
+    @group = Group.find(params[:id])
   end
 end
