@@ -24,9 +24,31 @@
         </table>
       </div>
 
-      <!-- <div class="col-xs-1"></div> -->
-
       <div class="col-xs-6">
+        <h3>入会リクエスト一覧</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>アイコン</th>
+              <th>名前</th>
+              <th>自己紹介</th>
+              <th>リクエスト</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @group_requests.each do |group_request| %>
+            <tr>
+              <td><%= attachment_image_tag(group_request, :image, :fill, 50, 50, fallback: "no-image-mini.jpg") %></td>
+              <td><%= group_request.name %></td>
+              <td><%= group_request.introduction %></td>
+              <td>
+                <%= link_to "承認", allow_path(group_request), class:'btn btn-primary' %>
+                <%= link_to "否認", reject_path(group_request), class:'btn btn-danger' %>
+              </td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
     </div>
     <div class="col-xs-1"></div>

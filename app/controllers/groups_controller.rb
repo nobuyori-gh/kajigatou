@@ -9,10 +9,13 @@ class GroupsController < ApplicationController
   # グループユーザー一覧
   def member
     @group = Group.find(params[:id])
-    @group_users = @group.users.all
+    @group_users = @group.users
+
+    @group_requests = @group.request_users
   end
 
   def show
+
     @group = Group.find(params[:id])
   end
 

@@ -23,7 +23,7 @@
               <td><%= group.description %></td>
               <td>
                 <% if current_user.already_requested?(group) %>
-                <%= link_to 'リクエスト取消', group_request_path(group_id:group.id), method: :delete %>
+                <%= link_to 'リクエスト取消', group_request_path(group), method: :delete %>
                 <% else %>
                 <%= link_to 'リクエスト送信', group_requests_path(group_id:group.id), method: :post %>
                 <% end %>
