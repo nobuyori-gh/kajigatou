@@ -19,7 +19,7 @@ class GroupRequestsController < ApplicationController
 
   # リクエスト承認されたらGroupUserに保存
   def allow
-    request = GroupRequest.find(arams[:id])
+    request = GroupRequest.find(params[:id])
     user = User.find_by(id:request.user_id)
     group_user = Group.group_users.new(group_id:group.id, user_id:user.id)
     group_user.save

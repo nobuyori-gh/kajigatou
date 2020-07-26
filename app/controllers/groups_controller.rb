@@ -17,6 +17,7 @@ class GroupsController < ApplicationController
   # グループ詳細表示
   def show
     @group = Group.find(params[:id])
+    @group_tasks = @group.group_tasks
   end
 
   # グループ作成と同時に作成者をグループユーザーとして保存

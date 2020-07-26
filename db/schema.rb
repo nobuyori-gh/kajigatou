@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_21_104821) do
+ActiveRecord::Schema.define(version: 2020_07_25_021139) do
 
   create_table "group_requests", force: :cascade do |t|
     t.integer "group_id"
@@ -19,6 +19,20 @@ ActiveRecord::Schema.define(version: 2020_07_21_104821) do
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_group_requests_on_group_id"
     t.index ["user_id"], name: "index_group_requests_on_user_id"
+  end
+
+  create_table "group_tasks", force: :cascade do |t|
+    t.integer "group_id"
+    t.integer "user_id"
+    t.string "title", null: false
+    t.text "body", null: false
+    t.string "rep"
+    t.datetime "deadline", null: false
+    t.boolean "status", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_group_tasks_on_group_id"
+    t.index ["user_id"], name: "index_group_tasks_on_user_id"
   end
 
   create_table "group_users", force: :cascade do |t|
