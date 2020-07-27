@@ -30,13 +30,16 @@ class GroupTasksController < ApplicationController
   def update
     group_task = GroupTask.find(params[:id])
     if group_task.update(group_task_params)
-      redirect_to group_task_path(group_task), notice: "更新完了"
+      redirect_to group_task_path(group_task), notice: "タスク更新しました"
     else
       render "edit"
     end
   end
 
   def destroy
+    group_task = GroupTask.find(params[:id])
+    group_task.destroy
+    redirect_to group_path(group_task.group_id), notice: "タスクを削除しました"
   end
 
 private
