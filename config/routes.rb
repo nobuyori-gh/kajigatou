@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :groups, only: [:index,:show,:create,:edit,:update,:destroy]
 
   resources :group_tasks do
+    resource :thank_you, only: [:create, :destroy]
     resources :group_comments, only: [:create, :destroy]
   end
 end

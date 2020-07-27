@@ -16,6 +16,8 @@ class User < ApplicationRecord
 
   has_many :group_comments, dependent: :destroy
 
+  has_many :thank_yous, dependent: :destroy
+
   validates :name, length: {maximum: 20, minimum: 1}
   attachment :image
 end
