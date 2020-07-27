@@ -7,20 +7,25 @@
   <%= f.label :内容 %>
   <%= f.text_area :body, class: "col-xs-12" %>
 </div>
-<div class="form-group">
- <%= f.label :担当者, class: "col-sm-3" %>
- <div class="col-sm-9">
-  <%= f.collection_select :rep, Group.find(group.id).users, :id,:name, { include_blank: "--選択してください--"}, {class: "form-control"} %>
+<div class="form-group row">
+ <%= f.label :担当者 %>
+ <div class="col-sm-12">
+  <%= f.collection_select :rep, Group.find(group.id).users, :name,:name, { include_blank: "--選択してください--"}, {class: "form-control"} %>
 </div>
 </div>
-<div>
-  <%= f.label :担当者, class: "col-sm-3" %>
-  <%= f.datetime_select :deadline, {:start_year => Time.now.year, :end_year => Time.now.year + 2, :minute_step => 10, :use_month_numbers => true} %>
+<div class="row">
+  <%= f.label :期日 %>
+    <%= f.datetime_select :deadline, {:start_year => Time.now.year, :end_year => Time.now.year + 2, :minute_step => 10, :use_month_numbers => true} %>
+</div>
+
+<div class="field row">
+  <%= f.label :タスク完了 %>
+  <%= f.check_box :status, id: :task_status,:as => :boolean%>
 </div>
 
 <%= f.hidden_field :group_id, :value => group.id %>
 
 <div class="actions row">
-  <%= f.submit submit, class: "btn btn-primary col-xs-12" %>
+  <%= f.submit submit, class: "btn btn-primary pull-right" %>
   <% end %>
 </div>

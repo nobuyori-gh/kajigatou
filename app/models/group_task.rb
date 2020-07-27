@@ -4,4 +4,10 @@ class GroupTask < ApplicationRecord
 
   validates :title, presence: true
   validates :body, presence: true
+
+  enum status: {
+    未完了: false,
+    完了: true
+  }
+
 end

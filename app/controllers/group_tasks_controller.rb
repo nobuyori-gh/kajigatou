@@ -10,10 +10,10 @@ class GroupTasksController < ApplicationController
   def create
     @group_task = GroupTask.new(group_task_params)
     @group_task.user_id = current_user.id
+    @group = Group.find(group_task_params[:group_id])
     if @group_task.save
-      redirect_to groups_path, notice: "タスクを登録しました"
+      redirect_to group_path(@group), notice: "タスクを登録しました"
     else
-      @group = Group.find(group_task_params[:group_id])
       render 'new'
     end
   end
@@ -32,7 +32,7 @@ class GroupTasksController < ApplicationController
 
 private
 def group_task_params
-  params.require(:group_task).permit(:user_id,:group_id,:title,:body,:deadline,:status)
+  params.require(:group_task).permit(:user_id,:group_id,:title,:body,:rep,:deadline,:status)
 end
 
 end
