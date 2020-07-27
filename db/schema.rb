@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_25_021139) do
+ActiveRecord::Schema.define(version: 2020_07_27_093412) do
+
+  create_table "group_comments", force: :cascade do |t|
+    t.integer "group_task_id"
+    t.integer "user_id"
+    t.text "comment", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_task_id"], name: "index_group_comments_on_group_task_id"
+    t.index ["user_id"], name: "index_group_comments_on_user_id"
+  end
 
   create_table "group_requests", force: :cascade do |t|
     t.integer "group_id"

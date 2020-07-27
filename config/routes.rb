@@ -18,5 +18,7 @@ Rails.application.routes.draw do
   get 'groups/delete_confimation/:id' =>'groups#delete_confimation', as: 'group_deletion'
   resources :groups, only: [:index,:show,:create,:edit,:update,:destroy]
 
-  resources :group_tasks
+  resources :group_tasks do
+    resources :group_comments, only: [:create, :destroy]
+  end
 end

@@ -46,11 +46,33 @@
     </div>
     <%= link_to "編集する", edit_group_task_path(@group_task), class:"pull-right btn btn-primary" %>
 
+    <!-- コメント -->
     <div class="row">
+      <!-- 一覧 -->
+      <% @group_task.group_comments.each do |comment| %>
+      <div>
+        <%= comment.user.name %>
 
+        <%= comment.comment %>
+
+        <% if comment.user == current_user %>
+        <%= link_to "削除する",group_task_group_comment_path(comment.group_task, comment), method: :delete, class: "btn-sm btn-danger" %>
+        <% end %>
+        <% end %>
+      </div>
+
+      <!-- 入力欄 -->
+      <%= form_with model: @group_comment, url: group_task_group_comments_path(group_task_id: @group_task, group_comment_id: @group_comment), local: :true do |f| %>
+      <div class="row">
+        <div class="col-sm-12">
+          <%= f.text_area :comment, rows:"5", class:"form-control",placeholder: "コメント入力欄" %>
+        </div>
+        <%= f.submit "送信する", class:"btn btn-lg btn-base-1 mt-20 pull-right" %>
+        <% end %>
+      </div>
     </div>
+
   </div>
-</div>
-<div class="col-xs-1"></div>
+  <div class="col-xs-1"></div>
 </div>
 </div>

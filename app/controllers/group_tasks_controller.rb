@@ -20,6 +20,7 @@ class GroupTasksController < ApplicationController
 
   def show
     @group_task = GroupTask.find(params[:id])
+    @group_comment = GroupComment.new
   end
 
   def edit
