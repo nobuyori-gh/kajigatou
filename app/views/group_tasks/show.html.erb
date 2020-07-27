@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-10">
+      <%= render '/layouts/errors', obj:  @group_task %>
+      <h2>タスク詳細</h2>
+      <div class="row">
+       <label class="col-sm-3">タイトル</label>
+       <div class="col-sm-9">
+        <%= @group_task.title %>
+      </div>
+    </div>
+    <div class="row">
+      <label class="col-sm-3">本文</label>
+      <div class="col-sm-9">
+        <%= @group_task.body %>
+      </div>
+    </div>
+    <div class="row">
+      <label class="col-sm-3">担当者</label>
+      <div class="col-sm-3">
+        <%= @group_task.rep %>
+      </div>
+      <label class="col-sm-3">期日</label>
+      <div class="col-sm-3">
+        <%= l @group_task.deadline, format: :short %>
+      </div>
+    </div>
+    <div class="row">
+      <label class="col-sm-3">進捗</label>
+      <div class="col-sm-3">
+        <% if @group_task.status = false %>
+        未完了
+        <% else %>
+        完了
+        <% end %>
+      </div>
+      <label class="col-sm-3">ありがとう</label>
+      <div class="col-sm-3">
+        <% if @group_task.status = false %>
+        未完了
+        <% else %>
+        完了
+        <% end %>
+      </div>
+    </div>
+    <%= link_to "編集する", edit_group_task_path(@group_task), class:"pull-right btn btn-primary" %>
+
+    <div class="row">
+
+    </div>
+  </div>
+</div>
+<div class="col-xs-1"></div>
+</div>
+</div>

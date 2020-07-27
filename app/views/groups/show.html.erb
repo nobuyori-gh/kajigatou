@@ -37,7 +37,13 @@
                 <td><%= link_to group_task.title, group_task_path(group_task) %></td>
                 <td><%= group_task.rep %></td>
                 <td><%= l group_task.deadline, format: :short %></td>
-                <td><%= group_task.status %></td>
+                <td>
+                  <% if group_task.status = false %>
+                  未完了
+                  <% else %>
+                  完了
+                  <% end %>
+                </td>
                 <td></td>
                 <td></td>
               </tr>

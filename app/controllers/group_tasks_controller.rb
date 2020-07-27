@@ -19,12 +19,21 @@ class GroupTasksController < ApplicationController
   end
 
   def show
+    @group_task = GroupTask.find(params[:id])
   end
 
   def edit
+    @group_task = GroupTask.find(params[:id])
+    @group = @group_task.group
   end
 
   def update
+    group_task = GroupTask.find(params[:id])
+    if group_task.update(group_task_params)
+      redirect_to group_task_path(group_task), notice: "更新完了"
+    else
+      render "edit"
+    end
   end
 
   def destroy

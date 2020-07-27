@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-1"></div>
+    <div class="col-xs-10">
+      <%= render '/layouts/errors', obj:  @group_task %>
+      <h2>タスク編集</h2>
+      <%= render '/group_tasks/task', group_task: @group_task, group: @group, url: group_task_path(@group_task), submit: '更新する' %>
+    </div>
+    <div class="col-xs-1"></div>
+  </div>
+</div>
