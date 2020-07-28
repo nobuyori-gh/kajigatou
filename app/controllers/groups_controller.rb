@@ -11,7 +11,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @group_users = @group.users
 
-    @group_requests = @group.request_users
+    @group_requests = @group.group_requests
   end
 
   # グループ詳細表示

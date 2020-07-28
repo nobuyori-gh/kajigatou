@@ -12,7 +12,7 @@
             <tbody>
               <tr>
                 <td>アイコン</td>
-                <td></td>
+                <td><%= attachment_image_tag(@user, :image, :fill, 100, 100, fallback: "no_image.jpg") %></td>
               </tr>
               <tr>
                 <td>名前</td>
@@ -36,8 +36,10 @@
         <div class="row">
           <h3>マイグループ</h3>
           <% @mygroup.each do |mygroup| %>
+          <div class="field row">
           <%= link_to mygroup.name, group_path(mygroup.id) %>
           <%= link_to 'グループを抜ける', group_user_deletion_path(mygroup), class: "btn btn-danger pull-right" %>
+        </div>
           <% end %>
         </div>
       </div>

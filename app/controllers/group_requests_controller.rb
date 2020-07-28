@@ -17,20 +17,26 @@ class GroupRequestsController < ApplicationController
     redirect_to groups_path
   end
 
-  # リクエスト承認されたらGroupUserに保存
+  # リクエスト承認アクション
   def allow
     request = GroupRequest.find(params[:id])
     user = User.find_by(id:request.user_id)
-    group_user = Group.group_users.new(group_id:group.id, user_id:user.id)
+
+    group = Group.find(params[:group_id])
+
+    group_user = group.group_users.new(group_id:group.id, user_id:user.id)
+
     group_user.save
     request.destroy
     redirect_to groups_path
+    # redirect_back(fallback_lacation: root_path)
   end
 
   # リクエスト否認アクション
   def reject
     request = GroupRequest.find(params[:id])
     request.destroy
-    redirect_back(fallback_lacation: root_path)
+    redirect_to groups_path
+    # redirect_to group_member_path(id:group_id)
   end
 end

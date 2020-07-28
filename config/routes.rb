@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :group_users,only:[:index,:show,:destroy]
 
   post 'group_requests/:id' => 'group_requests#allow', as:'allow'
-  post 'group_requests/:id' => 'group_requests#reject', as:'reject'
+  delete 'group_requests/:id' => 'group_requests#reject', as:'reject'
   resources :group_requests, only:[:create,:destroy]
 
   get 'groups/:id/member' => 'groups#member', as:'group_member'
