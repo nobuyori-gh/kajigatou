@@ -72,3 +72,10 @@ gem 'jquery-rails'
 
 # アイコン
 gem "font-awesome-rails"
+
+# 環境変数管理
+gem 'dotenv-rails'
+
+group :production do
+  gem 'mysql2'
+end
