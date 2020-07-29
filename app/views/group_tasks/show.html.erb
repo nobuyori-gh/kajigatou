@@ -25,10 +25,10 @@
 <div class="row">
   <label class="col-sm-3">進捗</label>
   <div class="col-sm-3">
-    <% if @group_task.status = false %>
-    未完了
-    <% else %>
+    <% if @group_task.status != false %>
     完了
+    <% else %>
+    未完了
     <% end %>
   </div>
   <label class="col-sm-3">ありがとう</label>

@@ -29,9 +29,10 @@ class GroupTasksController < ApplicationController
   end
 
   def update
-    group_task = GroupTask.find(params[:id])
-    if group_task.update(group_task_params)
-      redirect_to group_task_path(group_task), notice: "タスク更新しました"
+    @group_task = GroupTask.find(params[:id])
+    @group = @group_task.group
+    if @group_task.update(group_task_params)
+      redirect_to group_task_path(@group_task), notice: "タスク更新しました"
     else
       render "edit"
     end
