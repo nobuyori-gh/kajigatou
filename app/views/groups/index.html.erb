@@ -1,46 +1,38 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-1"></div>
-    <div class="col-xs-10">
-      <%= render '/layouts/errors', obj: @group %>
-      <div class="col-xs-7">
-        <h3>グループ一覧</h3>
+<%= render '/layouts/errors', obj: @group %>
+<div class="col-xs-7">
+  <h3>グループ一覧</h3>
 
-        <table class="table">
-          <thead>
-            <tr>
-              <th>アイコン</th>
-              <th>グループ名</th>
-              <th>説明文</th>
-              <th>入会リクエスト</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @groups.each do |group| %>
-            <tr>
-              <td><%= attachment_image_tag(group, :image, :fill, 50, 50, fallback: "no-image-mini.jpg") %></td>
-              <td><%= group.name %></td>
-              <td><%= group.description %></td>
-              <td>
-                <% if current_user.already_requested?(group) %>
-                <%= link_to 'リクエスト取消', group_request_path(group), method: :delete %>
-                <% else %>
-                <%= link_to 'リクエスト送信', group_requests_path(group_id:group.id), method: :post %>
-                <% end %>
-              </td>
-            </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>アイコン</th>
+        <th>グループ名</th>
+        <th>説明文</th>
+        <th>入会リクエスト</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @groups.each do |group| %>
+      <tr>
+        <td><%= attachment_image_tag(group, :image, :fill, 50, 50, fallback: "no-image-mini.jpg") %></td>
+        <td><%= group.name %></td>
+        <td><%= group.description %></td>
+        <td>
+          <% if current_user.already_requested?(group) %>
+          <%= link_to 'リクエスト取消', group_request_path(group), method: :delete %>
+          <% else %>
+          <%= link_to 'リクエスト送信', group_requests_path(group_id:group.id), method: :post %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-      <div class="col-xs-1"></div>
+<div class="col-xs-1"></div>
 
-      <div class="col-xs-4">
-        <h3>グループを作る</h3>
-        <%= render '/groups/group', group: @group, url: groups_path, submit: '作成する' %>
-      </div>
-    </div>
-    <div class="col-xs-1"></div>
-  </div>
+<div class="col-xs-4">
+  <h3>グループを作る</h3>
+  <%= render '/groups/group', group: @group, url: groups_path, submit: '作成する' %>
 </div>
