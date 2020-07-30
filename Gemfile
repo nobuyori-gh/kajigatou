@@ -76,6 +76,10 @@ gem "font-awesome-rails"
 # 環境変数管理
 gem 'dotenv-rails'
 
+# deviseエラーメッセージ日本語化
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+
 group :production do
   gem 'mysql2'
 end
