@@ -11,6 +11,7 @@ class GroupRequestsController < ApplicationController
 
   # リクエスト取消アクション
   def destroy
+    byebug
     group = Group.find(params[:id])
     request = current_user.group_requests.find_by(group_id: group.id, user_id: current_user.id)
     request.destroy
