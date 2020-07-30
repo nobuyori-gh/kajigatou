@@ -31,18 +31,25 @@
   </div>
   <div class="row">
     <h3>マイグループ</h3>
-    <% @mygroup.each do |mygroup| %>
-    <div class="field row">
-      <%= link_to mygroup.name, group_path(mygroup.id) %>
-      <%= link_to 'グループを抜ける', group_user_deletion_path(@group_user), class: "btn btn-danger pull-right" %>
-    </div>
-    <% end %>
+    <table class="table">
+      <tbody>
+        <% @mygroup.each do |mygroup| %>
+        <tr>
+          <td><%= link_to mygroup.name, group_path(mygroup.id) %></td>
+          <td><%= link_to 'グループを抜ける', group_user_deletion_path(@group_user), class: "btn btn-danger pull-right" %></td>
+        </tr>
+      </tbody>
+      <% end %>
+    </table>
   </div>
 </div>
 
 <div class="col-xs-2"></div>
 
 <div class="col-xs-5">
-  <h3>グループを作る</h3>
-  <%= render '/groups/group', group: @group, url: groups_path, submit: '作成する' %>
+  <div class="row">
+    <div class="row"><h3>グループを作る</h3></div>
+    <!-- <h3>グループを作る</h3> -->
+    <%= render '/groups/group', group: @group, url: groups_path, submit: '作成する' %>
+  </div>
 </div>

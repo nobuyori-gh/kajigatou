@@ -22,13 +22,14 @@ class GroupsController < ApplicationController
 
   # グループ作成と同時に作成者をグループユーザーとして保存
   def create
-    group = Group.new(group_params)
-    if group.save
-      group_user = group.group_users.new(group_id:group.id, user_id:current_user.id)
+    @group = Group.new(group_params)
+    if @group.save!
+      group_user = @group.group_users.new(group_id:@group.id, user_id:current_user.id)
       group_user.save
       redirect_to group_path(group), notice: "保存できました"
     else
-      redirect_back(fallback_lacation: root_path)
+      @groups = Group.all
+      render "index"
     end
   end
 
