@@ -10,6 +10,10 @@ class User < ApplicationRecord
   end
 
   has_many :group_users, dependent: :destroy
+  def already_belong?(group)
+    self.group_users.exists?(group_id: group.id)
+  end
+
   has_many :groups, through: :group_users
 
   has_many :group_tasks, dependent: :destroy

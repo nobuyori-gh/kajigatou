@@ -18,7 +18,9 @@
         <td><%= group.name %></td>
         <td><%= group.description %></td>
         <td>
-          <% if current_user.already_requested?(group) %>
+          <% if current_user.already_belong?(group) then %>
+          <p>所属済み</p>
+          <% elsif current_user.already_requested?(group) then %>
           <%= link_to 'リクエスト取消', group_request_path(GroupRequest.find_by(group_id: group, user_id: current_user)), method: :delete %>
           <% else %>
           <%= link_to 'リクエスト送信', group_requests_path(group_id:group.id), method: :post %>
