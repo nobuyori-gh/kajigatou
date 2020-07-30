@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
 
   # グループ一覧表示
   def index
-    @group = Group.new
+    @group = flash[:group]? Group.new(flash[:group]) : Group.new
     @groups = Group.all
   end
 
@@ -22,14 +22,17 @@ class GroupsController < ApplicationController
 
   # グループ作成と同時に作成者をグループユーザーとして保存
   def create
-    @group = Group.new(group_params)
-    if @group.save!
-      group_user = @group.group_users.new(group_id:@group.id, user_id:current_user.id)
+    group = Group.new(group_params)
+    if group.save
+      group_user = @group.group_users.new(group_id:group.id, user_id:current_user.id)
       group_user.save
-      redirect_to group_path(group), notice: "保存できました"
+      redirect_to group_path(@group), notice: "保存できました"
     else
-      @groups = Group.all
-      render "index"
+      if request.referer.include?(user_path(current_user))
+        redirect_to user_path(current_user.id), flash:{error:group.errors.full_messages,group:group}
+      else
+        redirect_to groups_path, flash:{error:group.errors.full_messages,group:group}
+      end
     end
   end
 

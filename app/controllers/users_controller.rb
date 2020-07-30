@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
 
   def show
+    @group = flash[:group]? Group.new(flash[:group]) : Group.new
     @user = User.find(params[:id])
     @mygroup = @user.groups
     @group_user = @user.group_users.find_by(group_id: @mygroup)
-    @group = Group.new
   end
 
   def edit

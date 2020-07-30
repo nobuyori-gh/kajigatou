@@ -1,11 +1,21 @@
 <% if obj.errors.any? %>
     <div id="error_explanation">
       <h3><%= pluralize(obj.errors.count, "件のエラーが発生しています") %> </h3>
-
       <ul>
       <% obj.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<% if flash[:error] %>
+    <div id="error_explanation">
+      <h3><%= pluralize(flash[:error].count, "件のエラーが発生しています") %> </h3>
+      <ul class="errors">
+        <% flash[:error].each do |e| %>
+          <li><%= e %></li>
+        <% end %>
       </ul>
     </div>
 <% end %>

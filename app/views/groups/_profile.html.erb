@@ -1,15 +1,15 @@
-<table class="table">
-  <tbody>
-    <tr><%= attachment_image_tag(group, :image, :fill, 100, 100, fallback: "no_image.jpg") %></tr>
-    <tr>
-      <th>グループ名</th>
-      <th><%= group.name %></th>
-    </tr>
-    <tr>
-      <th>説明文</th>
-    </tr>
-    <tr>
-      <th><%= group.description %></th>
-    </tr>
-  </tbody>
-</table>
+<div class="field">
+  <%= attachment_image_tag(group, :image, :fill, 100, 100, fallback: "no_image.jpg") %>
+</div>
+<div>
+  グループ名
+  <div class="field">
+    <%= group.name %>
+  </div>
+</div>
+<div>
+  説明文
+  <div class="field">
+    <%= group.description %>
+  </div>
+</div>

@@ -1,4 +1,6 @@
-<%= form_with model: group, url: url,　local: :true do |f| %>
+<div class="row"><h3>グループを作る</h3></div>
+
+<%= form_with model: group, url: url,local: true do |f| %>
 <div class="field row">
   <%= f.label :グループ名 %>
   <%= f.text_field :name, class: "col-xs-12" %>
