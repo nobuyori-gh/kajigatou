@@ -31,6 +31,7 @@
   </div>
   <div class="row">
     <h3>マイグループ</h3>
+    <% if @mygroup.present? %>
     <table class="table">
       <tbody>
         <% @mygroup.each do |mygroup| %>
@@ -41,13 +42,22 @@
       </tbody>
       <% end %>
     </table>
+    <% else %>
+    <p>所属していません</p>
+    <p>グループに入るには</p>
+    <ul class="aqua">
+      <li>グループ一覧からリクエスト送信</li>
+      <li>新しくグループを作成</li>
+    </ul>
+    <p class="text-right">をしてください</p>
+      <% end %>
+    </div>
   </div>
-</div>
 
-<div class="col-xs-2"></div>
+  <div class="col-xs-2"></div>
 
-<div class="col-xs-5">
-  <div class="row">
-    <%= render '/groups/group', group: @group, url: groups_path, submit: '作成する' %>
+  <div class="col-xs-5">
+    <div class="row">
+      <%= render '/groups/group', group: @group, url: groups_path, submit: '作成する' %>
+    </div>
   </div>
-</div>
