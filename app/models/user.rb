@@ -22,6 +22,6 @@ class User < ApplicationRecord
 
   has_many :thank_yous, dependent: :destroy
 
-  validates :name, length: {maximum: 20, minimum: 1}
+  validates :name, length:{in: 2..20}
   attachment :image
 end

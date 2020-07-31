@@ -7,6 +7,6 @@ class Group < ApplicationRecord
 
   has_many :group_tasks, dependent: :destroy
 
-  validates :name, presence: true,length:{in: 2..100}
+  validates :name, presence: true,length:{in: 2..20}
   attachment :image
 end
