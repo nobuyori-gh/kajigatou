@@ -7,6 +7,32 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+
+    models:
+        user: ユーザー
+        group: グループ
+        group_task: グループタスク
+        group_comment: グループコメント
+    attributes:
+      user:
+        name: 名前
+        image_id: 画像
+        introduction: 自己紹介
+        email: メールアドレス
+        encrypted_password: パスワード
+      group:
+        name: 名前
+        description: 説明文
+        image_id: 画像
+      group_task:
+        title: タイトル
+        body: 内容
+        rep: 担当者
+        deadline: 期日
+        status: 完了ステータス
+      group_comment:
+        comment: コメント
+
   date:
     abbr_day_names:
     - 日
@@ -206,28 +232,5 @@ ja:
       short: "%m/%d %H:%M"
     pm: 午後
 
-    models:
-        user: ユーザー
-        group: グループ
-        group_task: グループタスク
-        group_comment: グループコメント
-    attributes:
-      user:
-        name: 名前
-        image_id: 画像
-        introduction: 自己紹介
-        email: メールアドレス
-        encrypted_password: パスワード
-      group:
-        name: 名前
-        description: 説明文
-        image_id: 画像
-      group_task:
-        title: タイトル
-        body: 内容
-        rep: 担当者
-        deadline: 期日
-        status: 完了ステータス
-      group_comment:
-        comment: コメント
+
 

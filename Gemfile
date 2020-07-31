@@ -80,6 +80,9 @@ gem 'dotenv-rails'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 
+# エラーメッセージ日本語化
+gem 'rails-i18n'
+
 group :production do
   gem 'mysql2'
 end
