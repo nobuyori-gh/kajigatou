@@ -1,0 +1,2 @@
+$("textarea").val("");
+$(".comment_<%= @group_task.id %>").html("<%= j(render 'group_tasks/comment', group_task: @group_task) %>");

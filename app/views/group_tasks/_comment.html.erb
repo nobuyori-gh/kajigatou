@@ -1,0 +1,15 @@
+<% group_task.group_comments.each do |comment| %>
+<tr>
+  <td>
+    <%= comment.user.name %>
+  </td>
+  <td>
+    <%= comment.comment %>
+  </td>
+  <td>
+    <% if comment.user == current_user %>
+    <%= link_to "削除する",group_task_group_comment_path(comment.group_task, comment), method: :delete, remote: true, class: "btn-sm btn-danger" %>
+    <% end %>
+  </td>
+</tr>
+<% end %>
