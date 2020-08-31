@@ -1,0 +1,11 @@
+<% if group_task.thank_you_by?(current_user) %>
+ <%= link_to group_task_thank_you_path(group_task), method: :delete, remote: true do %>
+  <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+  <%= group_task.thank_yous.count %>
+ <% end %>
+<% else %>
+ <%= link_to group_task_thank_you_path(group_task), method: :post, remote: true do %>
+  <i class="fa fa-heart-o" aria-hidden="true"></i>
+  <%= group_task.thank_yous.count %>
+ <% end %>
+<% end %>

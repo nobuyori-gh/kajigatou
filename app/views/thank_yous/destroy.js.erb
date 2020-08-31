@@ -1,0 +1,5 @@
+if (location.pathname == '/groups/:id') {
+  $(".task_<%= @group_task.id %>").html("<%= j(render 'groups/thank_you', group_task: @group_task) %>")
+} else {
+  $(".task_<%= @group_task.id %>").html("<%= j(render 'group_tasks/thank_you', group_task: @group_task ) %>")
+}

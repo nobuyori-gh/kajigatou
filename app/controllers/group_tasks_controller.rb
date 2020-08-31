@@ -11,6 +11,7 @@ class GroupTasksController < ApplicationController
     @group_task = GroupTask.new(group_task_params)
     @group_task.user_id = current_user.id
     @group = Group.find(group_task_params[:group_id])
+
     if @group_task.save
       redirect_to group_path(@group), notice: "タスクを登録しました"
     else

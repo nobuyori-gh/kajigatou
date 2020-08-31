@@ -1,0 +1,19 @@
+<td><%= link_to group_task.title, group_task_path(group_task) %></td>
+<td><%= group_task.rep %></td>
+<td><%= l group_task.deadline, format: :short %></td>
+
+<!-- タスク完了ステータス -->
+<td>
+  <% if group_task.status != false %>
+  完了
+  <% else %>
+  未完了
+  <% end %>
+</td>
+
+<!-- ありがとうボタン -->
+<td class="task_<%= group_task.id %>">
+ <%= render 'thank_you', group_task: group_task %>
+</td>
+
+<td><%= group_task.group_comments.count %></td>

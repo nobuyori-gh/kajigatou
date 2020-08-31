@@ -36,7 +36,7 @@
       <tbody>
         <% @mygroup.each do |mygroup| %>
         <tr>
-          <td><%= link_to mygroup.name, group_path(mygroup.id) %></td>
+          <td><%= link_to mygroup.name, group_path(mygroup.id), data: {"turbolinks" => false} %></td>
           <td><%= link_to 'グループを抜ける', group_user_deletion_path(@group_user), class: "btn btn-danger pull-right" %></td>
         </tr>
       </tbody>
