@@ -39,3 +39,6 @@
   - タスク進める上でのメモ
 - メール配信機能（未実装）
   - タスク期日に連絡
+
+###機能一覧
+  https://docs.google.com/spreadsheets/d/1R1EG12W14QNws7BWnXcX0Sr6vO55iz5ePQ5yrCpNLOo/edit#gid=0
