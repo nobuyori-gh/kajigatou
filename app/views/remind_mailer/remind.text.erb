@@ -1,0 +1,7 @@
+Remind#remind
+
+<% @today_group_tasks.each do |task| %>
+日時<%= task.deadline %>
+タイトル<%= task.title %>
+内容<%= task.body %>
+<% end %>

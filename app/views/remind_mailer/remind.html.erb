@@ -1,0 +1,19 @@
+<h1>Remind#remind</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>日時</th>
+      <th>タイトル</th>
+      <th>内容</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @today_group_tasks.each do |task| %>
+    <tr>
+      <td><%= task.deadline %></td>
+      <td><%= task.title %></td>
+      <td><%= task.body %></td>
+    </tr>
+    <% end %>
+  </tbody>

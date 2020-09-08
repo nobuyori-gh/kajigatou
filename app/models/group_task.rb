@@ -12,4 +12,8 @@ class GroupTask < ApplicationRecord
   def thank_you_by?(user)
     thank_yous.where(user_id: user.id).exists?
   end
+
+  def todays_task?
+    deadline < Time.now.since(24.hours) && deadline >= Time.zone.now
+  end
 end
