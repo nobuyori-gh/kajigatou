@@ -17,6 +17,17 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+
+// ハンバーガーメニュー
+$(function() {
+  $('.menu-trigger').on('click', function(event) {
+    $(this).toggleClass('active');
+    $('#sp-menu').fadeToggle();
+    event.preventDefault();
+  });
+});
+
+
 $(document).ready(function () {
   $("#theTarget").skippr({
     // スライドショーの変化 ("fade" or "slide")
