@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Kajigatou</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Kajigatou</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= render 'layouts/header' %>
-
-    <div class="container">
+<body>
+<!--   <div class="container"> -->
   <div class="row">
-    <div class="col-xs-1"></div>
-    <div class="col-xs-10">
-    <p id="notice"><%= notice %></p>
-    <%= yield %>
-</div>
-    <div class="col-xs-1"></div>
+    <%= render 'layouts/header' %>
   </div>
-</div>
-<footer>
-  maehara portfolio
-  <div>Logo made by <a href="https://www.designevo.com/logo-maker/" title="Free Online Logo Maker">DesignEvo free logo creator</a></div>
-</footer>
-
-  </body>
+  <main>
+    <!-- <div class="col-xs-1"></div>
+    <div class="col-xs-10"> -->
+      <p id="notice"><%= notice %></p>
+      <%= yield %>
+    <!-- </div>
+    <div class="col-xs-1"></div> -->
+  </main>
+  <footer>
+    maehara portfolio
+    <div>Logo made by <a href="https://www.designevo.com/logo-maker/" title="Free Online Logo Maker">DesignEvo free logo creator</a></div>
+  </footer>
+<!-- </div> -->
+</body>
 </html>

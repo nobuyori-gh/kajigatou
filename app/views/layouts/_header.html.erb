@@ -1,53 +1,44 @@
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class='navbar-header'>
-      <%= link_to image_tag("logo.jpg", :size => '200x180'), root_path %>
-
-      <div id="sp-menu">
-        <ul class="nav navbar-nav">
-          <% if user_signed_in? %>
-          <li aria-hidden="true">
-            <%= link_to " マイページ", user_path(current_user.id), class: "glyphicon glyphicon-user text-warning" %>
-          </li>
-          <li aria-hidden="true">
-            <%= link_to " グループ一覧", groups_path, class: "glyphicon glyphicon-folder-open text-warning" %>
-          </li>
-          <li aria-hidden="true">
-            <%= link_to " アバウト", home_about_path, class: "glyphicon glyphicon-pushpin text-warning" %>
-          </li>
-          <% else %>
-          <li aria-hidden="true">
-            <%= link_to " アバウト", home_about_path, class: "glyphicon glyphicon-pushpin text-warning" %>
-          </li>
-          <li aria-hidden="true">
-            <%= link_to " 新規登録", new_user_registration_path, class: "glyphicon glyphicon-edit text-warning" %>
-          </li>
-          <% end %>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-          <li aria-hidden="true">
-            <%= link_to " ログアウト", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-out text-warning" %>
-          </li>
-          <% else %>
-          <li aria-hidden="true">
-            <%= link_to " ログイン", new_user_session_path, class: "glyphicon glyphicon-log-in text-warning" %>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-
-      <div id="hm-icon">
-        <a class="menu-trigger" href="#">
-          <span></span>
-          <span></span>
-          <span></span>
-        </a>
-      </div>
-
-      <script type="text/javascript" src="js/jquery.min.js"></script>
-      <script type="text/javascript" src="js/script.js"></script>
+<header>
+    <div class='col-md-3'>
+      <%= link_to image_tag("logo.jpg", :size => '160x80'), root_path %>
     </div>
-  </div>
-</nav>
+    <div class="sp-menu col-md-9">
+      <ul class="nav-list">
+        <% if user_signed_in? %>
+        <li>
+          <%= link_to " マイページ", user_path(current_user.id), class: "glyphicon glyphicon-user text-warning" %>
+        </li>
+        <li>
+          <%= link_to " グループ一覧", groups_path, class: "glyphicon glyphicon-folder-open text-warning" %>
+        </li>
+        <li>
+          <%= link_to " アバウト", home_about_path, class: "glyphicon glyphicon-pushpin text-warning" %>
+        </li>
+        <li>
+          <%= link_to " ログアウト", destroy_user_session_path, method: :delete, class: "glyphicon glyphicon-log-out text-warning" %>
+        </li>
+        <% else %>
+        <li>
+          <%= link_to " アバウト", home_about_path, class: "glyphicon glyphicon-pushpin text-warning" %>
+        </li>
+        <li>
+          <%= link_to " 新規登録", new_user_registration_path, class: "glyphicon glyphicon-edit text-warning" %>
+        </li>
+        <li>
+          <%= link_to " ログイン", new_user_session_path, class: "glyphicon glyphicon-log-in text-warning" %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div id="hm-icon">
+      <a class="menu-trigger" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+    </div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</header>
