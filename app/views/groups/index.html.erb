@@ -1,5 +1,5 @@
 <%= render '/layouts/errors', obj: @group %>
-<div class="col-xs-7">
+<div class="main-item col-xs-7">
   <h3>グループ一覧</h3>
 
   <% if @groups.present? %>
@@ -15,16 +15,16 @@
     <tbody>
       <% @groups.each do |group| %>
       <tr>
-        <td><%= attachment_image_tag(group, :image, :fill, 50, 50, fallback: "no-image-mini.jpg") %></td>
+        <td><%= attachment_image_tag(group, :image, :fill, 64, 64, fallback: "no_image.jpg") %></td>
         <td><%= group.name %></td>
-        <td><%= group.description %></td>
+        <td class="description"><%= group.description %></td>
         <td>
           <% if current_user.already_belong?(group) then %>
           <p>所属済み</p>
           <% elsif current_user.already_requested?(group) then %>
-          <%= link_to 'リクエスト取消', group_request_path(GroupRequest.find_by(group_id: group, user_id: current_user)), method: :delete %>
+          <%= link_to '取消', group_request_path(GroupRequest.find_by(group_id: group, user_id: current_user)), method: :delete %>
           <% else %>
-          <%= link_to 'リクエスト送信', group_requests_path(group_id:group.id), method: :post %>
+          <%= link_to '送る', group_requests_path(group_id:group.id), method: :post %>
           <% end %>
         </td>
       </tr>
@@ -39,7 +39,5 @@
 <div class="col-xs-1"></div>
 
 <div class="col-xs-4">
-  <div class="row">
     <%= render '/groups/group', group: @group, url: groups_path, submit: '作成する' %>
-  </div>
 </div>

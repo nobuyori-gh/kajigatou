@@ -2,11 +2,11 @@
 
 <%= form_with model: group, url: url,local: true do |f| %>
 <div class="field row">
-  <%= f.label :グループ名 %>
+  <%= f.label :グループ名 %> ( 2〜10文字 )
   <%= f.text_field :name, class: "col-xs-12" %>
 </div>
 <div class="field row">
-  <%= f.label :説明文 %>
+  <%= f.label :説明文 %> ( 30文字以下 )
   <%= f.text_area :description, class: "col-xs-12" %>
 </div>
 <div class="field row">
