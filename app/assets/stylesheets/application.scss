@@ -145,12 +145,33 @@ main {
   background-image: url(dimitri-houtteman-2P6Q7_uiDr0-unsplash.jpg);
 }
 
-h3 {
-  margin-bottom: 20px;
+.task-headline {
+  padding: 0.5em;/*文字周りの余白*/
+  color: #494949;/*文字色*/
+  background: #fffaf4;/*背景色*/
+  border-left: solid 5px #ffaf58;/*左線（実線 太さ 色）*/
 }
 
 .field {
   margin-bottom: 20px;
+}
+
+.box1 {
+  padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #474747;
+    background: whitesmoke;/*背景色*/
+    border-left: double 7px #4ec4d3;/*左線*/
+    border-right: double 7px #4ec4d3;/*右線*/
+}
+
+.box2 {
+}
+
+.item {
+  margin: 20px auto;
+  border: 2px solid #CCC;
+  background-color: #fabf13;
 }
 
 .description {
