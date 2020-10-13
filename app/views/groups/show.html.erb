@@ -4,7 +4,7 @@
   <h3>グループ紹介</h3>
   <%= render '/groups/profile', group: @group %>
   <%= link_to '',edit_group_path(@group), class: "col-xs-12 field btn btn-default glyphicon glyphicon-wrench edit_group_#{@group.id}" %>
-  <%= link_to 'グループメンバー&入会リクエスト', group_member_path(@group), class: "col-xs-12 field btn btn-primary" %>
+  <%= link_to 'グループメンバー & 入会リクエスト', group_member_path(@group), class: "col-xs-12 field btn btn-primary" %>
 </div>
 
 <div class="col-xs-1"></div>
