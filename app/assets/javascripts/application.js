@@ -30,7 +30,7 @@ $(function() {
 
 // スライドショー
 $(document).ready(function () {
-  $("#theTarget").skippr({
+  $("#main-visual-content").skippr({
     // スライドショーの変化 ("fade" or "slide")
     transition : 'slide',
     // 変化に係る時間(ミリ秒)

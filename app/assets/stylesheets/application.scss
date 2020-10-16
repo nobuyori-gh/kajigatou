@@ -130,20 +130,20 @@ main {
   background-color: aqua;
 }
 
-#main-visual{
+#main-visual {
+  width: 100%;
+  height: 500px;
+  background-image: url(steinplatte-1331965_1920.jpg);
+  background-size: cover;
+}
+
+#main-visual-content {
   height: 500px;
 }
 
-.image1 {
-  background-image: url(water-flow-2464417_1920.jpg);
-  background-size: contain;
-}
-.image2 {
-  background-image: url(christopher-beloch-P2fBIamIbQk-unsplash.jpg);
-}
-.image3 {
-  background-image: url(dimitri-houtteman-2P6Q7_uiDr0-unsplash.jpg);
-}
+.main-visual-box {
+  top: 200px;
+  }
 
 .task-headline {
   padding: 0.5em;/*文字周りの余白*/
