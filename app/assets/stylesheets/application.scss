@@ -130,6 +130,7 @@ main {
   background-color: aqua;
 }
 
+/* --- スライドショー --- */
 #main-visual {
   width: 100%;
   height: 500px;
@@ -137,18 +138,26 @@ main {
   background-size: cover;
 }
 
-#main-visual-content {
-  height: 500px;
+.main-visual-box {
+  display: flex;
+  align-items: center; /*余白を残す*/
 }
 
-.main-visual-box {
-  top: 200px;
-  }
+.text-line {
+  height: 200px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+  flex-direction: column; /*縦に並べる*/
+  flex-wrap: wrap; /*折り返し*/
+  justify-content: center; /*上下中央寄せ*/
+  align-items: center; /*余白を残す*/
+}
 
-ul {
+ol {
   list-style-type: none;
 }
-
+/* ------------------------ */
 
 .task-headline {
   padding: 0.5em;/*文字周りの余白*/
@@ -168,9 +177,6 @@ ul {
     background: whitesmoke;/*背景色*/
     border-left: double 7px #4ec4d3;/*左線*/
     border-right: double 7px #4ec4d3;/*右線*/
-}
-
-.box2 {
 }
 
 .item {
@@ -195,7 +201,7 @@ ul {
     padding: 0;
 }
 
-/* グループを作る */
+/* グループを作る部分テンプレート */
 .kakomi-box14 {
  position: relative;
  margin: 2em auto;
