@@ -157,7 +157,7 @@ main {
 ol {
   list-style-type: none;
 }
-/* ------------------------ */
+/* -------- */
 
 .task-headline {
   padding: 0.5em;/*文字周りの余白*/
@@ -189,17 +189,37 @@ ol {
   width: 190px;
 }
 
-.box14{
-    padding: 0.2em 0.5em;
-    margin: 2em 0;
-    background: #d6ebff;
-    box-shadow: 0px 0px 0px 10px #d6ebff;
-    border: dashed 2px white;
+/* アバウトページ */
+.title-box4{
+  text-align: center;
+  margin: 50px 0;
+  background-color: #fff3e0;
+  border: 2px solid #ffa726;
 }
-.box14 p {
-    margin: 0;
-    padding: 0;
+
+.title-box4-title{
+  font-size: 16px;
+  position: absolute;
+  margin-top: -32px;
+  margin-left: -2px;
+  background-color: #ffa726;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px 4px 0 0;
+  padding: 4px 10px;
 }
+
+.title-box4 p{
+  margin: 0;
+  padding: 1em;
+}
+
+.ul-align-center {
+  display: inline-block;
+  text-align: left;
+  }
+/* ------- */
+
 
 /* グループを作る部分テンプレート */
 .kakomi-box14 {
