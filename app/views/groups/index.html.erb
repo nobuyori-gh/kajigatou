@@ -31,11 +31,12 @@
       <% end %>
     </tbody>
   </table>
+  <%= paginate @groups %>
   <% else %>
   <p>登録されていません</p>
   <% end %>
 </div>
 
 <div class="col-xs-5">
-    <%= render '/groups/group', group: @group, url: groups_path, submit: '作成する' %>
+  <%= render '/groups/group', group: @group, url: groups_path, submit: '作成する' %>
 </div>
