@@ -3,7 +3,6 @@ class GroupsController < ApplicationController
   # グループ一覧表示
   def index
     @group = flash[:group]? Group.new(flash[:group]) : Group.new
-    # @groups = Group.all
     @groups = Group.page(params[:page]).reverse_order
   end
 

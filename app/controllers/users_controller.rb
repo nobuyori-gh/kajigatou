@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   def show
     @group = flash[:group]? Group.new(flash[:group]) : Group.new
     @user = User.find(params[:id])
-    @mygroup = @user.groups
+    # @mygroup = @user.groups
+    @mygroup = @user.groups.page(params[:page]).reverse_order
     @group_user = @user.group_users.find_by(group_id: @mygroup)
   end
 
