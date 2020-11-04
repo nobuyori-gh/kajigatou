@@ -1,6 +1,6 @@
 <%= render '/layouts/errors', obj: @group %>
 <div class="col-xs-6">
-<h2>マイページ</h2>
+  <h2>マイページ</h2>
   <div class="row">
     <h3>登録情報</h3>
 
@@ -47,18 +47,17 @@
     <p>所属していません</p>
     <p>グループに入るには</p>
     <ul class="aqua">
-      <li>グループ一覧からリクエスト送信</li>
-      <li>新しくグループを作成</li>
+      <li>グループ一覧からリクエスト送信する</li>
+      <li>新しくグループを作成する</li>
     </ul>
-    <p class="text-right">をしてください</p>
-      <% end %>
-    </div>
+    <% end %>
   </div>
+</div>
 
-  <div class="col-xs-1"></div>
+<div class="col-xs-1"></div>
 
-  <div class="col-xs-5">
-    <div class="row">
-      <%= render '/groups/group', group: @group, url: groups_path, submit: '作成する' %>
-    </div>
+<div class="col-xs-5">
+  <div class="row">
+    <%= render '/groups/group', group: @group, url: groups_path, submit: '作成する' %>
   </div>
+</div>
